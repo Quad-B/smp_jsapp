@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      table{
+        text-align:center;
+        width: 100%;
+      }
+
+      /* Hide Scroll */
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container text-center">
+
+      ความยาวที่ต้องการจะกรอก
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="in" name="leeeeee" class="custom-control-input" onclick="/*check()*/">
+        <label class="custom-control-label" for="in">นิ้ว</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="cm" name="leeeeee" class="custom-control-input" onclick="/*check()*/">
+        <label class="custom-control-label" for="cm">เซนติเมตร</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="m" name="leeeeee" class="custom-control-input" onclick="/*check()*/">
+        <label class="custom-control-label" for="m">เมตร</label>
+      </div>
+        
+      <!--input type="radio" id="in" name="length" class="form-control" value="in">
+      <label for="male">นิ้ว</label>
+      <input type="radio" id="cm" name="length" class="form-control" value="cm">
+      <label for="female">เซนติเมตร</label>
+      <input type="radio" id="m" name="length" class="form-control" value="m">
+      <label for="other">เมตร</label-->
+      
+      <table class="mb-2">
+        <tr>
+          <td>
+      กว้าง <input type="number" id="width" class="form-control" name="width" placeholder="กว้าง">
+          </td>
+          <td>
+      ยาว <input type="number" id="length" class="form-control" name="length" placeholder="ยาว">
+          </td>
+        </tr>
+      <table>
+      
+      <form>
+        <div class="form-group row">
+        <label for="pricepre" class="col-sm-2 col-form-label">ราคาต่อตารางเมตร</label>
+          <div class="col-sm-10">
+        <input type="number" id="pricepre" class="form-control" name="pricepre" onkeyup="calu(this.value)">
+          </div>
+         </div>
+        
+        <div class="form-group row">
+      <label for="pricesum" class="col-sm-2 col-form-label">ราคาพื้นที่ทั้งหมด</label>
+          <div class="col-sm-10">
+            <input type="text" id="pricesum" readonly class="form-control-plaintext">
+          </div>
+         </div>
+      </form>
+        
+      </div>
+
+      <script>
+        //function check() {
+        //  var wv = document.getElementById("width").value;
+        //  var lv = document.getElementById("length").value;
+        //  var nv = document.getElementById("number").value;
+        //  if (wv == "" || lv == "" || nv == "") {
+        //    calu(document.getElementById("pricepre").value);
+        //  }
+        //}
+
+        function calu(price) {
+          var width = document.getElementById("width").value;
+          var length = document.getElementById("length").value;
+  
+          if (document.getElementById("in").checked){
+            document.getElementById("pricesum").value = ((width / 39.37) * (length / 39.37)) * price;
+          }
+          else if (document.getElementById("cm").checked){
+            document.getElementById("pricesum").value = ((width / 100) * (length / 100)) * price;
+          }
+          else if (document.getElementById("m").checked){
+            document.getElementById("pricesum").value = (width * length) * price;
+          }
+          else {
+            alert("กรุณาเลือกหน่วยวัดความยาว");
+            document.getElementById("pricepre").value = "";
+          }
+        }
+
+        const customTitlebar = require('custom-electron-titlebar');
+
+        new customTitlebar.Titlebar({
+          backgroundColor: customTitlebar.Color.fromHex('#444'),
+          maximizable: false
+        });
+      </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

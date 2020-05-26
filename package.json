@@ -1,0 +1,26 @@
+{
+  "name": "land_price",
+  "version": "1.0.0",
+  "description": "land price calculator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyphongsakorn/smp_jsapp.git"
+  },
+  "author": "Quad B",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boyphongsakorn/smp_jsapp/issues"
+  },
+  "homepage": "https://github.com/boyphongsakorn/smp_jsapp#readme",
+  "devDependencies": {
+    "electron": "^9.0.0"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.2-hotfix62"
+  }
+}
