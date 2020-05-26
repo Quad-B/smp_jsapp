@@ -16,6 +16,31 @@
   "bugs": {
     "url": "https://github.com/boyphongsakorn/smp_jsapp/issues"
   },
+  "build": {
+    "appId": "com.boyphongsakorn.saox",
+    "copyright": "copyright © 2019 Quad B Software",
+    "win": {
+      "target": [
+        {
+          "target": "portable"
+        }
+      ],
+      "compression": "maximum"
+    },
+    "linux": {
+      "target": [
+        "snap",
+        "AppImage"
+      ],
+      "category": "Calculator",
+      "compression": "maximum"
+    }
+  },
+  "snap": {
+    "confinement": "strict",
+    "grade": "stable",
+    "summary": "Unofficial JOOX Web App"
+  },
   "homepage": "https://github.com/boyphongsakorn/smp_jsapp#readme",
   "devDependencies": {
     "electron": "^9.0.0"
