@@ -2,6 +2,7 @@
   "github": {
     "release": true,
     "draft": true,
-    "assets": ["dist/*"]
+    // "assets": ["dist/*"]
+    "assets" : ["dist.zip"]
   }
 }
