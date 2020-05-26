@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "build": "electron-builder -w --publish 'never'"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -18,8 +17,8 @@
     "url": "https://github.com/boyphongsakorn/smp_jsapp/issues"
   },
   "build": {
-    "appId": "com.boyphongsakorn.saox",
-    "copyright": "copyright © 2019 Quad B Software",
+    "appId": "com.boyphongsakorn.smp_jsapp",
+    "copyright": "copyright © 2020 Quad B Coder",
     "win": {
       "target": [
         {
@@ -40,7 +39,7 @@
   "snap": {
     "confinement": "strict",
     "grade": "stable",
-    "summary": "Unofficial JOOX Web App"
+    "summary": "Price area Calculator"
   },
   "homepage": "https://github.com/boyphongsakorn/smp_jsapp#readme",
   "devDependencies": {
