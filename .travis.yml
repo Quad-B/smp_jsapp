@@ -41,13 +41,13 @@ script:
   # - npm install electron@2.0.18 --save-dev
   # - rm -f index.js
   # - mv index_2.js index.js
-  #- electron-builder -l --publish "never"
+  # - electron-builder -l --publish "never"
   # - dir
   # - node deletepackage.js
-  #- dir
+  # - dir
   # - npm uninstall --global yarn
   - cd dist
   - dir
   - cd -
   - zip -r dist.zip dist/
-  #- release-it --config .release-it.json --no-npm.publish --no-git
+  # - release-it --config .release-it.json --no-npm.publish --no-git
