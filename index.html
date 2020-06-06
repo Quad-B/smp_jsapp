@@ -133,10 +133,11 @@
           shadow: true
         }); 
         
-        const { remote } = require('electron')
-        const { Menu, MenuItem } = remote
+        const { remote } = require('electron');
+        const { Menu, MenuItem } = remote;
         
         const menu = new Menu();
+        
         menu.append(new MenuItem({
           label: 'Item 1',
           submenu: [
@@ -173,7 +174,7 @@
           ]
         }));
  
-        customTitlebar.updateMenu(menu);
+        customTitlebar.updateMenuPosition('bottom');
 
       </script>
       <!--script>
