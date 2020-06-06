@@ -89,6 +89,19 @@
       <script>require('bootstrap');</script>
       
       <script>
+        const { autoUpdater } = require("electron-updater");
+        
+        import { autoUpdater } from "electron-updater"
+
+        export default class AppUpdater {
+          constructor() {
+            const log = require("electron-log")
+            log.transports.file.level = "debug"
+            autoUpdater.logger = log
+            autoUpdater.checkForUpdatesAndNotify()
+          }
+        }
+        
         //function check() {
         //  var wv = document.getElementById("width").value;
         //  var lv = document.getElementById("length").value;
