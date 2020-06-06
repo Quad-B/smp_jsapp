@@ -125,6 +125,7 @@
           shadow: true
         });
         
+        const { remote, ipcRenderer, menu } = require("electron");
         const menu = new Menu();
 menu.append(new MenuItem({
     label: 'Item 1',
