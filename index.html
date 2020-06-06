@@ -126,7 +126,7 @@
         });
         
         const { app } = require('electron');
-        const menu = new Menu();
+        const menu = new remote.Menu();
 menu.append(new MenuItem({
     label: 'Item 1',
     submenu: [
