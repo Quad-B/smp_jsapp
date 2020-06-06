@@ -1,3 +1,4 @@
+const { autoUpdater } = require("electron-updater")
 const { app, BrowserWindow } = require('electron');
 
 function createWindow () {
@@ -20,6 +21,8 @@ function createWindow () {
   // Open the DevTools.
   /* win.webContents.openDevTools() */
 }
+
+autoUpdater.checkForUpdatesAndNotify()
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
