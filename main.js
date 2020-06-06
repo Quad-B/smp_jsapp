@@ -1,4 +1,4 @@
-// const { autoUpdater } = require("electron-updater");
+const { autoUpdater } = require("electron-updater");
 const { app, BrowserWindow } = require('electron');
 
 function createWindow () {
