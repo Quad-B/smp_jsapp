@@ -23,7 +23,8 @@ install:
   - npm install --global yarn
   # - npm uninstall electron-builder --save-dev
   - yarn global add electron-builder
-  - yarn global add electron-updater
+  # - yarn global add electron-updater
+  - npm install electron-updater --save
 script:
   - npm update
   # - npm uninstall async --save
