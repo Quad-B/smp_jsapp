@@ -31,7 +31,8 @@
           "target": "portable"
         }
       ],
-      "compression": "maximum"
+      "compression": "maximum",
+      "publish": ["github"]
     },
     "linux": {
       "target": [
