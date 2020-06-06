@@ -21,6 +21,7 @@
     "appId": "com.boyphongsakorn.smp_jsapp",
     "copyright": "copyright © 2020 Quad B Coder",
     "win": {
+      "publisherName" : "Quad B Coder",
       "target": [
         {
           "target": "nsis",
