@@ -116,14 +116,22 @@
             document.getElementById("pricepre").value = "";
           }
         }
+        
+        import { Titlebar, Color } from 'custom-electron-titlebar'
+ 
+        new Titlebar({
+          backgroundColor: Color.fromHex('#ECECEC'),
+          maximizable: false,
+          shadow: true
+        });
 
-        const customTitlebar = require('custom-electron-titlebar');
+        /* const customTitlebar = require('custom-electron-titlebar');
 
         new customTitlebar.Titlebar({
           backgroundColor: customTitlebar.Color.fromHex('#444'),
           maximizable: false,
           shadow: true
-        });
+        }); */
         
         const { remote } = require('electron')
         const { Menu, MenuItem } = remote
@@ -165,7 +173,7 @@
           ]
         }));
  
-        new customTitlebar.updateMenu(menu)
+        Titlebar.updateMenu(menu);
 
       </script>
       <!--script>
