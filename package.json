@@ -18,6 +18,7 @@
     "url": "https://github.com/boyphongsakorn/smp_jsapp/issues"
   },
   "build": {
+    "productName" : "SMP JSAPP",
     "appId": "com.boyphongsakorn.smp_jsapp",
     "copyright": "copyright © 2020 Quad B Coder",
     "win": {
