@@ -24,6 +24,7 @@ install:
   - npm install --global yarn
   # - npm uninstall electron-builder --save-dev
   - yarn global add electron-builder
+  - npm install electron-builder --save-dev
   # - yarn global add electron-updater
   # - npm install electron-updater --save
   # - npm install simple-signtool --save-dev
