@@ -1,6 +1,6 @@
 {
   "name": "land_price",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "land price calculator",
   "main": "main.js",
   "release": "build",
