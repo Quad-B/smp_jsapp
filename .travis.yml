@@ -25,7 +25,7 @@ install:
   - yarn global add electron-builder
   # - yarn global add electron-updater
   # - npm install electron-updater --save
-  - npm install simple-signtool --save-dev
+  # - npm install simple-signtool --save-dev
 script:
   - npm install
   - npm update
@@ -49,7 +49,7 @@ script:
   # - node deletepackage.js
   # - dir
   # - npm uninstall --global yarn
-  - node wtf.js
+  # - node wtf.js
   - cd dist
   - dir
   - cd -
