@@ -8,6 +8,7 @@ function createWindow () {
     height: 600,
     resizable: false,
     frame: false,
+    fullscreenable: false,
     title: "โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร",
     autoHideMenuBar: true,
     webPreferences: {
