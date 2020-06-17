@@ -32,7 +32,18 @@
     <div class="container text-center">
 
       ความยาวที่ต้องการจะกรอก
-      <div class="form-check form-check-inline">
+      <div class="btn-group btn-group-sm">
+        <input type="radio" class="btn-check" name="leeeeee" id="in" autocomplete="off" onclick="check()">
+        <label class="btn btn-secondary" for="in">นิ้ว</label>
+      
+        <input type="radio" class="btn-check" name="leeeeee" id="cm" autocomplete="off" onclick="check()">
+        <label class="btn btn-secondary" for="cm">เซนติเมตร</label>
+      
+        <input type="radio" class="btn-check" name="leeeeee" id="m" autocomplete="off" onclick="check()" checked>
+        <label class="btn btn-secondary" for="m">เมตร</label>
+      </div>
+
+      <!--div class="form-check form-check-inline">
         <input type="radio" id="in" name="leeeeee" class="form-check-input" onclick="/*check()*/">
         <label class="form-check-label" for="in">นิ้ว</label>
       </div>
@@ -43,7 +54,7 @@
       <div class="form-check form-check-inline">
         <input type="radio" id="m" name="leeeeee" class="form-check-input" onclick="/*check()*/">
         <label class="form-check-label" for="m">เมตร</label>
-      </div>
+      </div-->
         
       <!--input type="radio" id="in" name="length" class="form-control" value="in">
       <label for="male">นิ้ว</label>
@@ -89,14 +100,16 @@
       <script>require('bootstrap');</script>
       
       <script>
-        //function check() {
-        //  var wv = document.getElementById("width").value;
-        //  var lv = document.getElementById("length").value;
-        //  var nv = document.getElementById("number").value;
-        //  if (wv == "" || lv == "" || nv == "") {
-        //    calu(document.getElementById("pricepre").value);
-        //  }
-        //}
+        function check() {
+          var wv = document.getElementById("width").value;
+          var lv = document.getElementById("length").value;
+          var nv = document.getElementById("pricepre").value;
+          if (wv !== "" && lv !== "" && nv !== "") {
+            calu(document.getElementById("pricepre").value);
+          } else{
+            document.getElementById("pricesum").value = "";
+          }
+        }
 
         function calu(price) {
           var width = document.getElementById("width").value;
