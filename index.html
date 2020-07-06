@@ -12,6 +12,10 @@
         width: 100%;
       }
 
+      .action-menu-item {
+        text-decoration: none;
+      }
+
       /* Hide Scroll */
 
       /* Chrome, Safari, Edge, Opera */
@@ -153,20 +157,26 @@
 
         const menu = new Menu();
         menu.append(new MenuItem({
-          label: 'Main',
+          label: 'เมนู',
           submenu: [
             isMac ? { role: 'close' } : { role: 'quit' }
           ]
         }));
  
         menu.append(new MenuItem({
-          label: 'Contact',
+          label: 'ช่วยเหลือ',
           submenu: [
             {
-              label: 'Facebook',
+              label: 'ติดตาม เฟสบุ๊ค',
               click: async () => {
                 const { shell } = require('electron')
                 await shell.openExternal('https://www.facebook.com/QuadBCoder/')
+              }
+            },{
+              label: 'สนับสนุน',
+              click: async () => {
+                const { shell } = require('electron')
+                await shell.openExternal('https://ko-fi.com/boyphongsakorn')
               }
             }
           ]
