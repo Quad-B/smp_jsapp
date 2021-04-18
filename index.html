@@ -120,13 +120,16 @@
           var length = document.getElementById("length").value;
   
           if (document.getElementById("in").checked){
-            document.getElementById("pricesum").value = ((width / 39.37) * (length / 39.37)) * price;
+            var num = ((width / 39.37) * (length / 39.37)) * price;
+            document.getElementById("pricesum").value = num.toFixed(2);
           }
           else if (document.getElementById("cm").checked){
-            document.getElementById("pricesum").value = ((width / 100) * (length / 100)) * price;
+            var num = ((width / 100) * (length / 100)) * price;
+            document.getElementById("pricesum").value = num.toFixed(2);
           }
           else if (document.getElementById("m").checked){
-            document.getElementById("pricesum").value = (width * length) * price;
+            var num = (width * length) * price;
+            document.getElementById("pricesum").value = num.toFixed(2);
           }
           else {
             alert("กรุณาเลือกหน่วยวัดความยาว");

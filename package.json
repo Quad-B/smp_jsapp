@@ -1,6 +1,6 @@
 {
   "name": "land_price",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "land price calculator",
   "main": "main.js",
   "release": "build",
@@ -55,12 +55,12 @@
   },
   "homepage": "https://github.com/boyphongsakorn/smp_jsapp#readme",
   "devDependencies": {
-    "bootstrap": "^5.0.0-alpha1",
-    "electron": "^7.2.4",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.0"
+    "bootstrap": "^5.0.0-beta3",
+    "electron": "^7.3.3",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.2-hotfix62"
+    "custom-electron-titlebar": "^3.2.6"
   }
 }
