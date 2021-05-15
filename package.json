@@ -56,7 +56,11 @@
   "homepage": "https://github.com/boyphongsakorn/smp_jsapp#readme",
   "devDependencies": {
     "bootstrap": "^5.0.0-beta3",
+<<<<<<< HEAD
     "electron": "^12.0.7",
+=======
+    "electron": "^9.4.0",
+>>>>>>> 5b60a27f5533224c7991a0ea22a72d59b0d84360
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
   },
