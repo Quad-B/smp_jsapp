@@ -12,7 +12,9 @@ function createWindow () {
     title: "โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร",
     autoHideMenuBar: true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
     }
   })
 
