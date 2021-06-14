@@ -1,206 +1,165 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="stylesheet" href="./inclu/bootstrap/css/bootstrap.min.css">
-    <style>
-      table{
-        text-align:center;
-        width: 100%;
-      }
 
-      .action-menu-item {
-        text-decoration: none;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="./inclu/bootstrap/css/bootstrap.min.css">
+  <style>
+    table {
+      text-align: center;
+      width: 100%;
+    }
 
-      /* Hide Scroll */
+    .action-menu-item {
+      text-decoration: none;
+    }
 
-      /* Chrome, Safari, Edge, Opera */
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+    /* Hide Scroll */
 
-      /* Firefox */
-      input[type=number] {
-        -moz-appearance: textfield;
-      }
-    </style>
-  </head>
-  <body>
-    
-    <div class="container text-center">
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
-      ความยาวที่ต้องการจะกรอก
-      <div class="btn-group btn-group-sm">
-        <input type="radio" class="btn-check" name="leeeeee" id="in" autocomplete="off" onclick="check()">
-        <label class="btn btn-secondary" for="in">นิ้ว</label>
-      
-        <input type="radio" class="btn-check" name="leeeeee" id="cm" autocomplete="off" onclick="check()">
-        <label class="btn btn-secondary" for="cm">เซนติเมตร</label>
-      
-        <input type="radio" class="btn-check" name="leeeeee" id="m" autocomplete="off" onclick="check()" checked>
-        <label class="btn btn-secondary" for="m">เมตร</label>
-      </div>
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
 
-      <!--div class="form-check form-check-inline">
-        <input type="radio" id="in" name="leeeeee" class="form-check-input" onclick="/*check()*/">
-        <label class="form-check-label" for="in">นิ้ว</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="cm" name="leeeeee" class="form-check-input" onclick="/*check()*/">
-        <label class="form-check-label" for="cm">เซนติเมตร</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="m" name="leeeeee" class="form-check-input" onclick="/*check()*/">
-        <label class="form-check-label" for="m">เมตร</label>
-      </div-->
-        
-      <!--input type="radio" id="in" name="length" class="form-control" value="in">
-      <label for="male">นิ้ว</label>
-      <input type="radio" id="cm" name="length" class="form-control" value="cm">
-      <label for="female">เซนติเมตร</label>
-      <input type="radio" id="m" name="length" class="form-control" value="m">
-      <label for="other">เมตร</label-->
-      
-      <table class="mb-2">
-        <tr>
-          <td>
-      กว้าง <input type="number" id="width" class="form-control" name="width" placeholder="กว้าง">
-          </td>
-          <td>
-      ยาว <input type="number" id="length" class="form-control" name="length" placeholder="ยาว">
-          </td>
-        </tr>
+<body>
+
+  <div class="container text-center">
+
+    ความยาวที่ต้องการจะกรอก
+    <div class="btn-group btn-group-sm">
+      <input type="radio" class="btn-check" name="leeeeee" id="in" autocomplete="off" onclick="check()">
+      <label class="btn btn-secondary" for="in">นิ้ว</label>
+
+      <input type="radio" class="btn-check" name="leeeeee" id="cm" autocomplete="off" onclick="check()">
+      <label class="btn btn-secondary" for="cm">เซนติเมตร</label>
+
+      <input type="radio" class="btn-check" name="leeeeee" id="m" autocomplete="off" onclick="check()" checked>
+      <label class="btn btn-secondary" for="m">เมตร</label>
+    </div>
+
+    <table class="mb-2">
+      <tr>
+        <td>
+          กว้าง <input type="number" id="width" class="form-control" name="width" placeholder="กว้าง" onkeyup="check()">
+        </td>
+        <td>
+          ยาว <input type="number" id="length" class="form-control" name="length" placeholder="ยาว" onkeyup="check()">
+        </td>
+      </tr>
       <table>
-      
-      <form>
-        <div class="form-group row">
-        <label for="pricepre" class="col-sm-2 col-form-label">ราคาต่อตารางเมตร</label>
-          <div class="col-sm-10">
-        <input type="number" id="pricepre" class="form-control" name="pricepre" onkeyup="calu(this.value)">
-          </div>
-         </div>
-        
-        <div class="form-group row">
-      <label for="pricesum" class="col-sm-2 col-form-label">ราคาพื้นที่ทั้งหมด</label>
-          <div class="col-sm-10">
-            <input type="text" id="pricesum" readonly class="form-control-plaintext">
-          </div>
-         </div>
-      </form>
-        
-      </div>
 
-      <!--script src="./inclu/jquery-3.5.1.slim.min.js"></script>
-      <script src="./inclu/bootstrap/js/bootstrap.min.js"></script>
-      <script src="./inclu/popper.min.js"></script-->
-      <script>//let $ = require('jquery');</script>
-      <script>require('popper.js');</script>
-      <script>require('bootstrap');</script>
-      
-      <script>
-        function check() {
-          var wv = document.getElementById("width").value;
-          var lv = document.getElementById("length").value;
-          var nv = document.getElementById("pricepre").value;
-          if (wv !== "" && lv !== "" && nv !== "") {
-            calu(document.getElementById("pricepre").value);
-          } else{
-            document.getElementById("pricesum").value = "";
+        <form>
+          <div class="form-group row">
+            <label for="pricepre" class="col-sm-2 col-form-label">ราคาต่อตารางเมตร</label>
+            <div class="col-sm-10">
+              <input type="number" id="pricepre" class="form-control" name="pricepre" onkeyup="calu(this.value)">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="pricesum" class="col-sm-2 col-form-label">ราคาพื้นที่ทั้งหมด</label>
+            <div class="col-sm-10">
+              <input type="text" id="pricesum" readonly class="form-control-plaintext">
+            </div>
+          </div>
+        </form>
+
+  </div>
+
+  <script>require('popper.js');</script>
+  <script>require('bootstrap');</script>
+
+  <script>
+    function check() {
+      var wv = document.getElementById("width").value;
+      var lv = document.getElementById("length").value;
+      var nv = document.getElementById("pricepre").value;
+      if (wv !== "" && lv !== "" && nv !== "") {
+        calu(document.getElementById("pricepre").value);
+      } else {
+        document.getElementById("pricesum").value = "";
+      }
+    }
+
+    function calu(price) {
+      var width = document.getElementById("width").value;
+      var length = document.getElementById("length").value;
+
+      if (document.getElementById("in").checked) {
+        var num = ((width / 39.37) * (length / 39.37)) * price;
+        document.getElementById("pricesum").value = num.toFixed(2);
+      }
+      else if (document.getElementById("cm").checked) {
+        var num = ((width / 100) * (length / 100)) * price;
+        document.getElementById("pricesum").value = num.toFixed(2);
+      }
+      else if (document.getElementById("m").checked) {
+        var num = (width * length) * price;
+        document.getElementById("pricesum").value = num.toFixed(2);
+      }
+      else {
+        alert("กรุณาเลือกหน่วยวัดความยาว");
+        document.getElementById("pricepre").value = "";
+      }
+    }
+
+    const customTitlebar = require('custom-electron-titlebar');
+
+    let MyTitleBar = new customTitlebar.Titlebar({
+      backgroundColor: customTitlebar.Color.fromHex('#444'),
+      maximizable: false,
+      shadow: true
+    });
+
+    const { remote } = require('electron')
+    const { Menu, MenuItem } = remote
+
+    const isMac = process.platform === 'darwin'
+
+    const menu = new Menu();
+    menu.append(new MenuItem({
+      label: 'เมนู',
+      submenu: [
+        isMac ? { label: 'ปิด', role: 'close' } : { label: 'ออก', role: 'quit' }
+      ]
+    }));
+
+    menu.append(new MenuItem({
+      label: 'ช่วยเหลือ',
+      submenu: [
+        {
+          label: 'ติดตาม เฟสบุ๊ค',
+          click: async () => {
+            const { shell } = require('electron')
+            await shell.openExternal('https://www.facebook.com/QuadBCoder/')
+          }
+        }, {
+          label: 'สนับสนุน',
+          click: async () => {
+            const { shell } = require('electron')
+            await shell.openExternal('https://ko-fi.com/boyphongsakorn')
           }
         }
+      ]
+    }));
 
-        function calu(price) {
-          var width = document.getElementById("width").value;
-          var length = document.getElementById("length").value;
-  
-          if (document.getElementById("in").checked){
-            var num = ((width / 39.37) * (length / 39.37)) * price;
-            document.getElementById("pricesum").value = num.toFixed(2);
-          }
-          else if (document.getElementById("cm").checked){
-            var num = ((width / 100) * (length / 100)) * price;
-            document.getElementById("pricesum").value = num.toFixed(2);
-          }
-          else if (document.getElementById("m").checked){
-            var num = (width * length) * price;
-            document.getElementById("pricesum").value = num.toFixed(2);
-          }
-          else {
-            alert("กรุณาเลือกหน่วยวัดความยาว");
-            document.getElementById("pricepre").value = "";
-          }
-        }
-        
-        /* import { Titlebar, Color } from 'custom-electron-titlebar'
- 
-        new Titlebar({
-          backgroundColor: Color.fromHex('#ECECEC'),
-          maximizable: false,
-          shadow: true
-        }); */
+    MyTitleBar.updateMenu(menu);
 
-        const customTitlebar = require('custom-electron-titlebar');
+    MyTitleBar.updateTitle("โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร");
 
-        let MyTitleBar = new customTitlebar.Titlebar({
-          backgroundColor: customTitlebar.Color.fromHex('#444'),
-          maximizable: false,
-          shadow: true
-        });
+  </script>
+</body>
 
-        const { remote } = require('electron')
-        const { Menu, MenuItem } = remote
-
-        const isMac = process.platform === 'darwin'
-
-        const menu = new Menu();
-        menu.append(new MenuItem({
-          label: 'เมนู',
-          submenu: [
-            isMac ? { label: 'ปิด',role: 'close' } : { label: 'ออก',role: 'quit' }
-          ]
-        }));
- 
-        menu.append(new MenuItem({
-          label: 'ช่วยเหลือ',
-          submenu: [
-            {
-              label: 'ติดตาม เฟสบุ๊ค',
-              click: async () => {
-                const { shell } = require('electron')
-                await shell.openExternal('https://www.facebook.com/QuadBCoder/')
-              }
-            },{
-              label: 'สนับสนุน',
-              click: async () => {
-                const { shell } = require('electron')
-                await shell.openExternal('https://ko-fi.com/boyphongsakorn')
-              }
-            }
-          ]
-        }));
- 
-        MyTitleBar.updateMenu(menu);
-
-        MyTitleBar.updateTitle("โปรแกรมคำนวณราคาพื้นที่ต่อตารางเมตร");
-
-      </script>
-      <!--script>
-        /* import { autoUpdater } from "electron-updater";
-
-        export default class AppUpdater {
-          constructor() {
-            const log = require("electron-log")
-            log.transports.file.level = "debug"
-            autoUpdater.logger = log
-            autoUpdater.checkForUpdatesAndNotify()
-          }
-        }*/
-       </script-->
-  </body>
 </html>
