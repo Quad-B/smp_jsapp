@@ -61,6 +61,6 @@
     "popper.js": "^1.16.1"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.6"
+    "custom-electron-titlebar": "^4.1.0"
   }
 }
